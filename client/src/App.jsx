@@ -24,8 +24,8 @@ function App() {
   const credentials = `${clientID}:${clientSecret}`
   const base64Credentials = btoa(credentials)
   const basicAuthorization = `Basic ${base64Credentials}`
-  const redirectUri = 'http://localhost:5173/'
-
+  // const redirectUri = 'http://localhost:5173/'
+  const redirectUri = 'https://aws-project-anju.vercel.app/'
   const clearCodeFromURL = () => {
     searchParams.delete('code')
     setSearchParams(searchParams)
@@ -36,7 +36,7 @@ function App() {
     setToken('')
     setUser({})
     const logoutUrl = `${cognitoDomain}/logout?client_id=${clientID}&logout_uri=${encodeURIComponent(
-      'http://localhost:5173/'
+      redirectUri
     )}`
     window.location.href = logoutUrl
   }
@@ -100,7 +100,7 @@ function App() {
           throw new Error(`HTTP error! status: ${userInfoResponse.status}`)
         }
         const userInfo = await userInfoResponse.json()
-        const response = await fetch('http://localhost:8000/addUser', {
+        const response = await fetch('https://zp9a8agpbe.execute-api.us-east-1.amazonaws.com/api/addUser', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

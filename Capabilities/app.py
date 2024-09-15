@@ -97,3 +97,7 @@ def stockcode():
     except Exception as e:
         print(e)
         raise ChaliceViewError(e)
+
+@app.route('/hello')
+def hello():
+    return {"message": "Hello, world!"}
