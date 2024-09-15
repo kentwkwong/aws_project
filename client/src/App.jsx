@@ -100,7 +100,7 @@ function App() {
           throw new Error(`HTTP error! status: ${userInfoResponse.status}`)
         }
         const userInfo = await userInfoResponse.json()
-        const response = await fetch('https://zp9a8agpbe.execute-api.us-east-1.amazonaws.com/api/addUser', {
+        const response = await fetch('https://si1s14jr6i.execute-api.us-east-1.amazonaws.com/api/addUser', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

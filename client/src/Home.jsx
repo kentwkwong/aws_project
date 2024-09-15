@@ -16,7 +16,7 @@ const Home = ({ user, setUser }) => {
   const fetchSearchHistory = async () => {
     try {
       console.log('user.sub:', user.sub)
-      const url = `http://localhost:8000/search/${user.sub}`
+      const url = `https://si1s14jr6i.execute-api.us-east-1.amazonaws.com/api/search/${user.sub}`
 
       const response = await fetch(url)
       if (!response.ok)
@@ -33,7 +33,7 @@ const Home = ({ user, setUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const url = `http://localhost:8000/stockcode`
+      const url = `https://si1s14jr6i.execute-api.us-east-1.amazonaws.com/api/stockcode`
 
       const response = await fetch(url, {
         method: 'POST',

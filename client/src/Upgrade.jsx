@@ -88,7 +88,7 @@ const Upgrade = ({ user, setUser }) => {
 
   const handleUpdateUser = async (id) => {
     try {
-      const response = await fetch('http://localhost:8000/upgradeUser', {
+      const response = await fetch('https://si1s14jr6i.execute-api.us-east-1.amazonaws.com/api/upgradeUser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
