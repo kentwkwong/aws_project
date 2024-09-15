@@ -25,7 +25,7 @@ function App() {
   const base64Credentials = btoa(credentials)
   const basicAuthorization = `Basic ${base64Credentials}`
   // const redirectUri = 'http://localhost:5173/'
-  const redirectUri = 'https://aws-project-anju.vercel.app/'
+  const redirectUri = 'https://kwfinancial.vercel.app/'
   const clearCodeFromURL = () => {
     searchParams.delete('code')
     setSearchParams(searchParams)
@@ -36,7 +36,7 @@ function App() {
     setToken('')
     setUser({})
     const logoutUrl = `${cognitoDomain}/logout?client_id=${clientID}&logout_uri=${encodeURIComponent(
-      redirectUri
+      'https://kwfinancial.vercel.app/'
     )}`
     window.location.href = logoutUrl
   }
